@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+<div class="container">
+  <div class="container">
+    <div class="container mb-3" style="background-color: black;">
+      <h2 class="text-light">Bienvenido Usuario</h2>
+      <h4 class="text-light">Tenemos una lista exclusiva de productos para ti ¿Quieres conocerla?</h4>
+      <button class="btn btn-outline-light mb-3" style="background-color: black;" type="submit">Contactanos</button>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for flan in flanes %}
+        <div class="col">
+          <div class="card h-100">
+            <img src="{{ flan.image_url }}" class="card-img-top" alt="{{ flan.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ flan.name }}</h5>
+              <p class="card-text">{{ flan.description }}</p>
+              <!-- <p class="card-text">{{ flan.nuevo_atributo }}</p> -->
+            </div>
+          </div>
+          
+        </div>
+        {% endfor %}  
+</div>
+{% endblock %}
